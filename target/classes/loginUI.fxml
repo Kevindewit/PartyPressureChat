@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
+   <children>
+      <Button fx:id="btnLogin" layoutX="264.0" layoutY="241.0" onMouseClicked="#btnLoginClicked" mnemonicParsing="false" text="Login" />
+      <Button fx:id="btnLoginAsGuest" layoutX="240.0" layoutY="293.0" onMouseClicked="#btnLoginAsGuestClicked" mnemonicParsing="false" text="Login as Guest" />
+      <Label fx:id="lblForgotPassword" layoutX="243.0" layoutY="340.0" onMouseClicked="#lblForgotPasswordClicked" text="Forgot password" textFill="#0004ff" />
+      <TextField fx:id="txtfldUsername" layoutX="213.0" layoutY="128.0" />
+      <PasswordField fx:id="psswrdfldPassword" layoutX="213.0" layoutY="188.0" />
+      <Label layoutX="213.0" layoutY="100.0" text="Username" />
+      <Label layoutX="213.0" layoutY="164.0" text="Password" />
+      <ImageView fx:id="imgImage" fitHeight="73.0" fitWidth="553.0" layoutX="28.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
