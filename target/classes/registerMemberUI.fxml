@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="383.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registerMemberController">
+   <children>
+      <Button fx:id="btnBack" layoutX="119.0" layoutY="309.0" mnemonicParsing="false" onMouseClicked="#onbtnBackClicked" prefHeight="25.0" prefWidth="70.0" text="Back" />
+      <Button fx:id="btnCreate" layoutX="33.0" layoutY="309.0" mnemonicParsing="false" onMouseClicked="#onbtnCreateClicked" prefHeight="25.0" prefWidth="70.0" text="Create" />
+      <TextField fx:id="txtfldUsername" layoutX="40.0" layoutY="126.0" />
+      <TextField fx:id="txtfldName" layoutX="40.0" layoutY="69.0" />
+      <Label layoutX="39.0" layoutY="44.0" text="Name:" />
+      <Label layoutX="40.0" layoutY="102.0" text="Username:" />
+      <Label layoutX="40.0" layoutY="167.0" text="Password:" />
+      <Label layoutX="39.0" layoutY="225.0" text="E-mail:" />
+      <TextField fx:id="txtfldEmail" layoutX="38.0" layoutY="251.0" prefHeight="25.0" prefWidth="149.0" />
+      <PasswordField fx:id="psswrdfldPassword" layoutX="38.0" layoutY="192.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>

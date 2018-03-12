@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homepageGuestController">
     <children>
         <TabPane layoutX="-1.0" layoutY="-4.0" prefHeight="400.0" prefWidth="481.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab fx:id="tabEventOverview" text="Event Overview">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox fx:id="hbxChat" layoutX="14.0" layoutY="20.0" prefHeight="344.0" prefWidth="200.0" />
+                     </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab fx:id="tabLiveStream" text="LiveStream">
@@ -22,10 +27,11 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <ImageView fx:id="imgImage" fitHeight="400.0" fitWidth="111.0" layoutX="489.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgImage" fitHeight="332.0" fitWidth="111.0" layoutX="489.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="http://loudnoises.nl/wp-content/uploads/2014/04/Poster-Down-Under-2013-met-DJ.jpg" />
             </image>
         </ImageView>
+      <Button fx:id="btnLogOff" layoutX="517.0" layoutY="349.0" mnemonicParsing="false" onMouseClicked="#onbtnLogOffClicked" text="Log Off" />
     </children>
 </AnchorPane>

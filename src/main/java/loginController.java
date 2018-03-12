@@ -25,6 +25,9 @@ public class loginController {
     private Label lblForgotPassword;
 
     @FXML
+    private Label lblCreateAccount;
+
+    @FXML
     private ImageView imgImage;
 
 
@@ -34,7 +37,7 @@ public class loginController {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("homepageMemberUI.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Homepage for Members");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(new Scene(root));
             stage.show();
 
             //Close the current window
@@ -52,7 +55,7 @@ public class loginController {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("homepageGuestUI.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Homepage for Guests");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(new Scene(root));
             stage.show();
 
             //Close the current window
@@ -65,6 +68,38 @@ public class loginController {
     }
 
     public void lblForgotPasswordClicked() {
+        try {
+            //Open and show the new homepageMember window
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("forgotPasswordUI.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Password Recovery");
+            stage.setScene(new Scene(root));
+            stage.show();
 
+            //Close the current window
+            Stage thisStage = (Stage) lblForgotPassword.getScene().getWindow();
+            thisStage.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void lblCreateAccountClicked(){
+        try {
+            //Open and show the new homepageMember window
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("registerMemberUI.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Register Member");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            //Close the current window
+            Stage thisStage = (Stage) lblCreateAccount.getScene().getWindow();
+            thisStage.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
