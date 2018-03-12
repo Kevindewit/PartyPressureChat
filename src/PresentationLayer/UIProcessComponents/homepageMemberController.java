@@ -1,20 +1,30 @@
+package PresentationLayer.UIProcessComponents;
+
 import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class homepageGuestController {
+public class homepageMemberController {
+    @FXML
+    private ListView<String> lstvwChatContacts;
 
     @FXML
-    Button btnLogOff;
+    private Button btnLogOff;
+
+    @FXML
+    private ListView<String> lstvwChatText;
+
     @FXML
     private void initialize() {
-
+        lstvwChatContacts.getItems().addAll("Loek Vogels", "Stefan Bergh", "Daphne van de Laar", "Kevin de Wit", "Hans Lousberg");
+        lstvwChatText.getItems().addAll("Loek: Hallo", "Stefan: Hallo", "Loek: Hoe gaat het?", "Stefan: Goed hoor en met jou?");
     }
 
     public void onbtnLogOffClicked(){
