@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +18,9 @@
               <AnchorPane fx:id="tabPrivateChat" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ListView fx:id="lstvwChatContacts" layoutX="14.0" layoutY="14.0" prefHeight="345.0" prefWidth="125.0" />
-                        <ListView fx:id="lstvwChatText" layoutX="156.0" layoutY="14.0" prefHeight="343.0" prefWidth="304.0" />
+                        <ListView fx:id="lstvwChatText" layoutX="156.0" layoutY="14.0" prefHeight="309.0" prefWidth="304.0" />
+                        <TextField fx:id="txtfldTextEntry" layoutX="156.0" layoutY="333.0" prefHeight="25.0" prefWidth="246.0" />
+                        <Button fx:id="btnSend" layoutX="408.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#btnSendClicked" text="Send" />
                      </children></AnchorPane>
             </content>
           </Tab>
