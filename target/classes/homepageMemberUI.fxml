@@ -26,7 +26,10 @@
           </Tab>
           <Tab fx:id="tabEventOverview" text="Event Overview">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="lstvwEvents" layoutX="25.0" layoutY="21.0" prefHeight="334.0" prefWidth="434.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab fx:id="tabLiveStream" text="LiveStream">

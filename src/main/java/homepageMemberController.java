@@ -1,10 +1,7 @@
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,12 +15,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static javafx.scene.input.KeyCode.F;
-import static javafx.scene.input.KeyCode.N;
 
 public class homepageMemberController {
     @FXML
     private ListView<String> lstvwChatContacts;
+
+    @FXML
+    private ListView<String> lstvwEvents;
 
     @FXML
     private Button btnLogOff;
@@ -38,7 +36,7 @@ public class homepageMemberController {
     //Set the listview
     private ListView<String> lstvwChatText;
 
-    //Set the images... Needs to be automated when taken from the database
+    //Set the images for the chatcontacts... Needs to be automated when taken from the database
     private Image Loek_Vogels = new Image("https://c-sf.smule.com/z0/account/icon/v4_defpic.png", 50, 50, false, false);
     private Image Stefan_Bergh = new Image("https://c-sf.smule.com/z0/account/icon/v4_defpic.png", 50, 50, false, false);
     private Image Kevin_De_Wit = new Image("https://c-sf.smule.com/z0/account/icon/v4_defpic.png", 50, 50, false, false);
@@ -46,15 +44,29 @@ public class homepageMemberController {
     private Image Daphne_Van_De_Laar = new Image("https://c-sf.smule.com/z0/account/icon/v4_defpic.png", 50, 50, false, false);
     private Image Dennis_Aspers = new Image("https://c-sf.smule.com/z0/account/icon/v4_defpic.png", 50, 50, false, false);
 
+
+    //Set the images for the events... Needs to be automated when taken from the database
+    private Image Paaspop = new Image("https://cdn.pastemagazine.com/www/system/images/photo_albums/every-2017-festival-poster-so-far-/large/paaspop-2017-lineup-poster.jpg?1384968217", 100, 150, false, false);
+    private Image Bospop = new Image("http://www.livemusicandstuff.com/Resources/bospop2012bandli.jpeg", 100, 150, false, false);
+    private Image Fools_Paradise = new Image("https://cdn.pastemagazine.com/www/system/images/photo_albums/every-2017-festival-poster-so-far-/large/fools-paradise-2017-lineup-poster.jpg?1384968217", 100, 150, false, false);
+    private Image Mysteryland = new Image("https://i.pinimg.com/originals/6e/15/98/6e159841b835be2b1d8909a962ab2a20.jpg", 100, 150, false, false);
+
+    private Image[] listOfEvents = {Paaspop, Bospop, Fools_Paradise, Mysteryland};
+
     //Put all the images in a Image array
-    private Image[] listOfImages = {Loek_Vogels, Stefan_Bergh, Kevin_De_Wit, Hans_Lousberg, Daphne_Van_De_Laar, Dennis_Aspers};
+    private Image[] listOfChats = {Loek_Vogels, Stefan_Bergh, Kevin_De_Wit, Hans_Lousberg, Daphne_Van_De_Laar, Dennis_Aspers};
 
     @FXML
     private void initialize() {
 
-        ObservableList<String> items = FXCollections.observableArrayList(
+        ObservableList<String> chats = FXCollections.observableArrayList(
                 "Loek", "Stefan", "Kevin", "Hans", "Daphne", "Dennis");
-        lstvwChatContacts.setItems(items);
+
+        ObservableList<String> events = FXCollections.observableArrayList(
+                "Paaspop", "Bospop", "Fools_Paradise", "Mysteryland");
+
+        lstvwChatContacts.setItems(chats);
+        lstvwEvents.setItems(events);
 
         lstvwChatContacts.setCellFactory(param -> new ListCell<String>() {
             private ImageView imageView = new ImageView();
@@ -66,15 +78,43 @@ public class homepageMemberController {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    int i = 0;
-                    for (String item :
-                            items) {
-                        name.equals(item);
-                        imageView.setImage(listOfImages[i]);
-                        setText(name);
-                        setGraphic(imageView);
-                        i++;
-                    }
+                    if(name.equals("Loek"))
+                        imageView.setImage(listOfChats[0]);
+                    else if(name.equals("Stefan"))
+                        imageView.setImage(listOfChats[1]);
+                    else if(name.equals("Kevin"))
+                        imageView.setImage(listOfChats[2]);
+                    else if(name.equals("Hans"))
+                        imageView.setImage(listOfChats[3]);
+                    else if(name.equals("Daphne"))
+                        imageView.setImage(listOfChats[4]);
+                    else if(name.equals("Dennis"))
+                        imageView.setImage(listOfChats[5]);
+                    setText(name);
+                    setGraphic(imageView);
+                }
+            }
+        });
+
+        lstvwEvents.setCellFactory(param -> new ListCell<String>() {
+            private ImageView imageView = new ImageView();
+            @Override
+            public void updateItem(String name, boolean empty) {
+                super.updateItem(name, empty);
+                if (empty) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    if(name.equals("Paaspop"))
+                        imageView.setImage(listOfEvents[0]);
+                    else if(name.equals("Bospop"))
+                        imageView.setImage(listOfEvents[1]);
+                    else if(name.equals("Fools_Paradise"))
+                        imageView.setImage(listOfEvents[2]);
+                    else if(name.equals("Mysteryland"))
+                        imageView.setImage(listOfEvents[3]);
+                    setText(name + " BUY YOUR TICKETS NOW!!!");
+                    setGraphic(imageView);
                 }
             }
         });
@@ -86,13 +126,6 @@ public class homepageMemberController {
             public void run() {
                 lstvwChatContacts.scrollTo(0);
                 lstvwChatContacts.getSelectionModel().select(0);
-            }
-        });
-
-        lstvwChatContacts.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                lstvwChatText.getItems().clear();
             }
         });
 
