@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -27,10 +24,16 @@ public class homepageMemberController {
     private Button btnLogOff;
 
     @FXML
+    private Tab tabLiveStream;
+
+    @FXML
     private Button btnSend;
 
     @FXML
     private TextField txtfldTextEntry;
+
+    @FXML
+    private ImageView imgImage;
 
     @FXML
     //Set the listview
@@ -58,6 +61,9 @@ public class homepageMemberController {
 
     @FXML
     private void initialize() {
+
+
+        imgImage.setPreserveRatio(false);
 
         ObservableList<String> chats = FXCollections.observableArrayList(
                 "Loek", "Stefan", "Kevin", "Hans", "Daphne", "Dennis");
@@ -118,6 +124,17 @@ public class homepageMemberController {
                 }
             }
         });
+
+        /**
+        Button[] buttons = new Button[0];
+        int i = 0;
+        for (String event:
+             events) {
+            i++;
+            Button btn = new Button("Button " + i);
+            buttons.
+        }
+         **/
 
         //Selects the first item in de listview
         Platform.runLater(new Runnable() {

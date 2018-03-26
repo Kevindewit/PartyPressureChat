@@ -19,6 +19,10 @@ public class registerMemberController {
     private PasswordField psswrdfldPassword;
     @FXML
     private TextField txtfldEmail;
+    @FXML
+    private PasswordField psswrdfldRepeatPassword;
+    @FXML
+    private TextField txtfldRepeatEmail;
 
     public void onbtnBackClicked(){
         try {

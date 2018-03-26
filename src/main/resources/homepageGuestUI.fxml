@@ -27,7 +27,7 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <ImageView fx:id="imgImage" fitHeight="332.0" fitWidth="111.0" layoutX="489.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgImage" fitHeight="332.0" fitWidth="103.0" layoutX="489.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="http://loudnoises.nl/wp-content/uploads/2014/04/Poster-Down-Under-2013-met-DJ.jpg" />
             </image>

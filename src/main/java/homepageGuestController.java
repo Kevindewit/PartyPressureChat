@@ -20,6 +20,9 @@ public class homepageGuestController {
     private Button btnLogOff;
 
     @FXML
+    private ImageView imgImage;
+
+    @FXML
     private Tab tabLiveStream;
 
     @FXML
@@ -35,6 +38,8 @@ public class homepageGuestController {
 
     @FXML
     private void initialize() {
+        imgImage.setPreserveRatio(false);
+
         ObservableList<String> events = FXCollections.observableArrayList(
                 "Paaspop", "Bospop", "Fools_Paradise", "Mysteryland");
 
